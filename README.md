@@ -147,5 +147,5 @@ A react native demo for multi joystick control which both support Android and iO
 
 * Android 桥接实现思路：
 	* 桥接原生ViewGroup，重写onTouchEvent函数，实现对MotionEvent的监听。
-	* 将onTouchEvent的 event 结构里的属性（坐标和位移）通过 DeviceEventEmitter 发送到RN层。
+	* 将onTouchEvent的 event 结构里的属性（坐标和位移）通过 DeviceEventEmitter 发送到RN层（此处也可以使用 receiveEvents 完成事件回传）。
 	* RN层声明桥接的ViewGroup，其引用形式同 RN-View。并监听 DeviceEventEmitter 的回传，在不同的onTouch事件中做出对应的计算和展示。
